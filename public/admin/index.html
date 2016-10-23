@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html ng-app="adminApp">
+
+<head>
+	<title>Admin Login Form</title>
+</head>
+
+<body>
+	<div class="container" ng-controller="adminCtrl">
+		<h1>Admin Login</h1>
+<a href="/admin">login</a>
+<a href="/admin/dashboard">dashboard</a>
+		<div ng-view="">
+		</div>
+	</div>
+</body>
+
+
+
+<script src="/js/angular.min.js"></script>
+<script src="/js/angular-route.min.js"></script>
+<script src="controllers/adminController.js"></script>
+
+</html>

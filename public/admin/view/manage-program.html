@@ -1,0 +1,84 @@
+<div class="container" ng-controller="programCtrl" ng-init="getAllProgram()"> 
+  <form>
+  <div class="row">
+    <div class="col-md-5">
+      <input type="hidden" name="_id" value="" class="form-control" placeholder="id" ng-model="manageProgramForm._id">
+      <input type="text" name="title" value="" class="form-control" placeholder="Title" ng-model="manageProgramForm.title">
+      <span class="text-danger"> </span>
+      <div class="devidr"></div>
+      <textarea name="description_s" class="form-control" placeholder="Short Desc." rows="1" ng-model="manageProgramForm.desc"></textarea>
+      <span class="text-danger"> </span>
+      <div class="devidr"></div>
+      <textarea name="description_long" class="form-control" placeholder="Full Desc." rows="3" ng-model="manageProgramForm.fullDesc"></textarea>
+      <div class="devidr"></div>
+      <input type="text" name="college" value="" class="form-control" placeholder="College or Org name" ng-model="manageProgramForm.collName">
+      <div class="devidr"></div>
+      <select name="category" class="form-control" ng-model="manageProgramForm.category">
+        <option value="">-select type-</option>
+        <option>College Post</option>
+      </select>
+      <span class="text-danger"> </span>
+      
+    </div>
+    <div class="col-md-5">
+      <input type="text" name="linkT_one" value="" class="form-control" placeholder="1. Link title" ng-model="manageProgramForm.linkTitle1">
+  <div class="devidr"></div>
+      <input type="text" name="linkA_one" value="" class="form-control" placeholder="1. Link address" ng-model="manageProgramForm.link1">
+  <div class="devidr"></div>
+      <input type="text" name="linkT_two" value="" class="form-control" placeholder="2. Link title" ng-model="manageProgramForm.linkTitle2">
+  <div class="devidr"></div>
+      <input type="text" name="linkA_two" value="" class="form-control" placeholder="2. Link address" ng-model="manageProgramForm.link2">
+  <div class="devidr"></div>
+      <input type="text" name="linkT_three" value="" class="form-control" placeholder="3. Link title" ng-model="manageProgramForm.linkTitle3">
+  <div class="devidr"></div>
+      <input type="text" name="linkA_three" value="" class="form-control" placeholder="3. Link address" ng-model="manageProgramForm.link3">
+    </div>
+    <div class="col-md-5"><br>
+      <button id="ujpg" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;&nbsp;&nbsp; Image &nbsp;&nbsp;&nbsp;</button>
+      <!-- <div class="devidr"></div> -->
+      <button id="uvdo" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;&nbsp;&nbsp; Video &nbsp;&nbsp;&nbsp;</button>
+    
+      <div class="devidr"></div>
+      <div id="ujpgshow" class=""><input type="file" ngf-select ng-model="manageProgramForm.file" name="file" ngf-pattern="'image/*'" accept="image/*" 
+                ngf-max-size="20MB" /></div>
+      <div id="uvdoshow" class="dis-none"><input type="text" name="url" class="form-control" placeholder="Youtube <video id> here.." style="background:#f5f6f6, display:none" ng-model="manageProgramForm.youtubeLink"></div>
+      <span class="text-danger"> </span>
+    </div>
+  </div><div class="row">
+    <div class="col-md-5"><br>
+    <button id="ujpg" type="submit" name="upload" value="1" class="btn btn-primary" ng-click="addProgram()"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;&nbsp;&nbsp; Upload &nbsp;&nbsp;&nbsp;</button>
+    </div>
+  </div>
+</form>
+
+<p>&nbsp;</p><p>&nbsp;</p>
+  <div class="row" ng-repeat="program in programs">
+    <div class="col-md-10">
+        
+      <div class="col-md-12 cus-shadow" style="position:relative;">
+        <div style="position:absolute;top:0px;right:5px;">
+<!--           <a href="update-program-more.php?prog_id=9">Manage More</a> |  -->
+          <a href="" ng-click="editPrograms(program._id)">Edit</a> | 
+          <a href="" ng-click="deletePrograms(program._id,program.ext)">Delete</a>
+        </div>
+         <div class="col-md-4" ng-if>
+                      <iframe style="border-radius:8px;border:1px solid #fff;" width="100%" height="150" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/https://www.youtube.com/watch?v=Pc0rY-_FxIg?playlist=https://www.youtube.com/watch?v=Pc0rY-_FxIg&amp;loop=1">
+</iframe>
+                   </div>
+          
+          <div class="col-md-8 d-inner">
+                    <btx><a href="#">{{program.title}}</a></btx>
+            <p>{{program.desc}}</p>
+            <p><i class="fa fa-anchor"></i>{{program.fullDesc}}</p>
+            <div style="color:#f29f0e;"><br><br></div>
+            <div class="col-md-12" style="background:#f4f4f4;"><i class="fa fa-map-signs"></i> &nbsp;
+                          </div>
+          </div>
+          <div class="col-md-12" style="height:10px;"></div>
+        </div>
+        <div class="col-md-12" style="height:15px;"></div>
+    <div class="col-md-12" style="height:15px;"></div>
+    </div>
+  </div>
+
+</div>

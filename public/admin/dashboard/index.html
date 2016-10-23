@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html ng-app="adminApp">
+    <link href="../../css/bower_components/bootstrap/dist/css/bootstrap.min.css"  rel="stylesheet">
+<head>
+	<title>Dash Board</title>
+</head>
+
+<body>
+	<div class="container" ng-controller="adminCtrl">
+		<h1>Dashboard1111111111111</h1>
+		<a href="/admin">login</a>
+		<a href="/admin/dashboard">dashboard</a>
+
+		<table>
+			<tr>
+				<td>
+					<ul class="nav in" id="side-menu">
+						<li><a href="#" style="background-color: #A7B3BC;">MANAGE PAGES CONTENTS</a></li>
+						<li><a href="/apanel/pages/dashboard.php" class="active"><i class="fa fa-home fa-fw"></i> Home</a></li>
+						<li><a href="#photo-gallery">Photo Gallery</a></li>
+						<li><a href="#"><i class="fa fa-sitemap fa-fw"></i> Contact</a></li>
+						<li><a href="/modules/defult-menu/news-events-downloads/index.php"><i class="fa fa-download fa-fw"></i> News &amp; Events and Downloads</a></li>
+						<li>
+							<a href="/modules/defult-menu/add-menu.php" style="background-color: #A7B3BC;">ADD MENU</a>
+						</li>
+						<li>
+							<a href="/modules/defult-menu/trainers.php">Trainers Profile</a>
+						</li>
+						<li>
+							<li><a href="#manage-program">Manage Program</a></li>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<div ng-view="">
+					</div>
+				</td>
+
+
+			</tr>
+		</table>
+
+
+	</div>
+</body>
+
+<script src="/js/angular.min.js"></script>
+<script src="/js/angular-route.min.js"></script>
+<script src="controllers/dashboardController.js"></script>
+<script src="controllers/programController.js"></script>
+
+
+  <script type="text/javascript" src="/js/ng-file-upload.min.js"></script>
+  <script type="text/javascript" src="/js/ng-file-upload-shim.min.js"></script>
+
+
+</html>

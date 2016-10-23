@@ -1,0 +1,16 @@
+<body>
+	<div ng-init="getPhotoGallerOneFolder()"> Admin Login Form
+		<form id="form1" role="form">
+			<div class="form-group">
+				<h4><label>Create Folder</label></h4>
+				<input type="text"  name="Fname" class="form-control" placeholder="Create Folder" ng-model="photoGalleryEditFolderForm.folderName"> 
+				<input type="hidden"  name="Fname" class="form-control" placeholder="Create Folder" ng-model="photoGalleryEditFolderForm._id"> 
+				<br>
+				<span class="glyphicon glyphicon-plus">
+					<input type="submit" id="submit" class="btn btn-info" ng-click="photoGalleryEditFolder()" value="Add">
+				</span>
+			</div>
+		</form>
+	</div>
+</body>
+

@@ -1,0 +1,21 @@
+<body>
+  <div ng-init="getAllImageOnload()"> 
+
+<table>
+<tr ng-repeat="image in  allImages">
+<td>{{$index +1}}</td>
+<td>{{image.imageName}}</td>
+<td>    <img ng-src="/uploads/{{image._id}}.{{image.ext}}" width="200px">
+</td>
+
+<td>   <button ng-click="deleteImage(image._id,image.ext)">Delete Image</button>
+</td>
+
+
+</tr>
+</table>
+
+
+
+  </div>
+</body>

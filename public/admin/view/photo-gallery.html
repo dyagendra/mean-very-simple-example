@@ -1,0 +1,42 @@
+<div class="row" ng-init="getPhotoGallerFolder()">
+            <br>
+                    <div class="col-lg-6">
+                                     <form id="form1" role="form">
+                                        <div class="form-group">
+                                            <h4><label>Create Folder</label></h4>
+                                            <input type="text" id="text" name="Fname" class="form-control" placeholder="Create Folder" ng-model="photoGalleryAddFolderForm.folderName"> 
+                                             <br>
+                                            <span class="glyphicon glyphicon-plus">
+                                            <input type="submit" id="submit" class="btn btn-info" ng-click="photoGalleryAddFolder()" value="Add"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                          <div class="col-lg-12">
+                         <h3>Add Folder</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:5px;">Serial Number</th>
+                                            <th>Folder Name</th>
+                                            <th>Option</th>
+                                        </tr>
+
+   <tr ng-repeat="folder in allFolders">
+    <td>{{$index +1}}</td>
+    <td>{{folder.folderName}}</td>
+    <td>
+        <a href="indexUpdate.php?id=2"><span class="glyphicon glyphicon-pencil"></span></a> &nbsp;&nbsp;
+        <a href="index.php?fid=2&amp;ref=delete" onclick="return confirm('Are u sure?');">
+          <a href ng-click="photoGalleryFolderDelete(folder._id)">Delete</a>
+        <a href="#editFolderName/{{folder._id}}">Edit</a>
+        <a href="#addPhoto/{{folder._id}}">Add Photo</a>&nbsp;&nbsp;
+        <a href="#viewPhoto/{{folder._id}}">View Photo</a>
+    </td>
+  </tr>
+                                 
+                            
+                        </thead></table>
+                    </div>
+                   </div>
+               </div>

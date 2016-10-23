@@ -1,0 +1,17 @@
+<body>
+  <div ng-init="addImageOnload()"> 
+    <form id="form1" role="form">
+      <div class="form-group">
+        <h4><label>Add Photo</label></h4>
+        <input type="text" class="form-control" placeholder="Image Name" ng-model="addPhotoForm.imageName"> 
+        <input type="hidden" class="form-control" placeholder="Image Name" ng-model="addPhotoForm.folderID"> 
+        <input type="file" ngf-select ng-model="addPhotoForm.file" name="file" ngf-pattern="'image/*'" accept="image/*" 
+                ngf-max-size="20MB" />
+        <br>
+        <span class="glyphicon glyphicon-plus">
+          <input type="submit" id="submit" class="btn btn-info" ng-click="addPhoto()" value="Add">
+        </span>
+      </div> 
+    </form>
+  </div>
+</body>
